@@ -38,7 +38,7 @@ export const Movies = () => {
       {movies && (
         <ul>
           {movies.map(el => (
-            <Link key={el.id}>
+            <Link key={el.id} to={`/movies/${el.id}`}>
               <li>{el.title}</li>
             </Link>
           ))}
