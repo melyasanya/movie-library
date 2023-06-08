@@ -1,6 +1,7 @@
-import { NavLink } from 'react-router-dom';
+import { Suspense } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 
-export const Layout = ({ children }) => {
+export const Layout = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -21,7 +22,9 @@ export const Layout = ({ children }) => {
           </div>
         </div>
       </nav>
-      {children}
+      <Suspense fallback={<div>loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

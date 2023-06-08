@@ -23,3 +23,7 @@ code {
   border-radius: 3px;
   overflow: hidden;
 }
+
+li {
+  list-style: none;
+}

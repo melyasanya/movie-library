@@ -1,0 +1,15 @@
+.upper {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.image {
+  width: 300px;
+}
+
+.genres {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+}

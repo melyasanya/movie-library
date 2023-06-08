@@ -8,7 +8,7 @@ const headers = {
 
 export const getTrandingMovies = () => {
   return fetch(
-    'https://api.themoviedb.org/3/trending/all/day?language=en-US',
+    'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
     headers
   ).then(response => response.json());
 };
@@ -16,6 +16,27 @@ export const getTrandingMovies = () => {
 export const getMovieByName = name => {
   return fetch(
     `https://api.themoviedb.org/3/search/movie?query=${name}&include_adult=false&language=en-US&page=1`,
+    headers
+  ).then(response => response.json());
+};
+
+export const getMovieById = id => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+    headers
+  ).then(response => response.json());
+};
+
+export const getMovieCast = id => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`,
+    headers
+  ).then(response => response.json());
+};
+
+export const getMovieReviews = id => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${id}/reviews?language=en-US&page=1`,
     headers
   ).then(response => response.json());
 };
