@@ -5,10 +5,9 @@ import css from './MovieDetails.module.css';
 
 const MovieDetail = () => {
   const [movieInfo, setMovieInfo] = useState('');
+  const [location] = useState(useLocation());
 
   const id = useParams();
-
-  const location = useLocation();
 
   useEffect(() => {
     getMovieById(id.movieId).then(response => setMovieInfo(response));
